@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <LINK REL=StyleSheet HREF="pintustil.css" TYPE="text/css" MEDIA=screen>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> <!-- Optional theme --> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> <!-- Latest compiled and minified JavaScript --> <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    
+    <title>Pinturitas</title>
+</head>
+<body>
+
+    
+      <!--primera tabla-->
+      <div id="colores">
+        <table class="table">
+            <tr>
+               <td  id="Blue" onClick="seleccion_nombre(0)">Blue</td>
+               <td id="Red"  onClick="seleccion_nombre(1)">Red</td>
+                <td id="Green"  onClick="seleccion_nombre(2)">Green</td>
+                <td id="Yellow"  onClick="seleccion_nombre(3)">Yellow</td>
+                <td id="Cyan" onClick="seleccion_nombre(4)">Cyan</td>
+                <td id="Blanco"  onClick="seleccion_nombre(5)">white</td>
+            </tr>
+            <tr>    
+                <td id="casillanombrecolor" colspan="6">Selecciona un color y luego pinta con él</td>
+             </tr>
+                </table>
+      </div><br> 
+
+      <div id="pinturitas">
+          <script>
+        /*Registro un evento para cuando termine de cargarse el documento se cargen los eventos necesarios.*/
+        window.onload = crearTabla();
+
+        /*Exclusivamente con DOM, crear una tabla 60x30 (4 elementos-casillas).*/
+        function crearTabla() {
+            //Obtener la referencia del elemento body.
+            var body = document.getElementsByTagName("body")[0];
+        
+            //Crea un elemento <table> y un elemento <tbody>.
+            var tabla = document.createElement("table");
+            var tblBody = document.createElement("tbody");
+            var tablaborde = tabla.getAttribute("border");
+            tabla.align.center;
+            //Crea las celdas.
+            for (var i=0; i<30; i++) {
+                //Crea las hileras de la tabla.
+                var hilera = document.createElement("tr");
+                hilera.style.height = "10px";
+                for (var j=0; j<60; j++) {
+                    var celda = document.createElement("td");
+                    var textoCelda = document.createTextNode(i+j);
+                    hilera.appendChild(celda);
+                    celda.style.width = "10px";
+                    celda.style.background = "white";
+                    celda.onmouseover= function (e){
+                        if(pulsado==1){
+                          var colorSelec = document.getElementById("casillanombrecolor").innerText;
+
+                            this.style.background = colorSelec}
+                        }
+
+                }
+                //Agrega la hilera al final de la tabla (al final del elemento tblbody).
+                tblBody.appendChild(hilera);
+            }
+        
+            //Posiciona el <tbody> debajo del elemento <table>.
+            tabla.appendChild(tblBody);
+            //appends <table> into <body>.
+            body.appendChild(tabla);
+            //Modifica el atributo "border" de la tabla y lo fija a "2";
+            tabla.setAttribute("border", "");
+
+        
+        }
+        
+        
+    </script>
+    
+    <input type="button" value="Borrar dibujo" onclick="location.reload()"/>
+
+
+
+      </div>
+      
+</body>
+</html>
+<script>
+    function seleccion_nombre(casilla){
+
+         // var colorSelec = document.getElementById("casillanombrecolor").innerText;
+
+         var valor = document.getElementsByTagName("td")[casilla].firstChild.nodeValue;
+
+         document.getElementById("casillanombrecolor").firstChild.nodeValue = valor;
+         document.getElementById("casillanombrecolor").style.color =  valor;
+
+    }
+
+    pulsado = 0;
+    document.addEventListener("mousedown", function (e){pulsado = 1});
+    document.addEventListener("mouseup", function (e){pulsado = 0});
+
+
+</script>

@@ -1,0 +1,71 @@
+body{
+  width: 1200px;  
+}
+
+
+   #Blue {
+    width: 10%;
+    border-color: rgb(24, 23, 23) 20px;
+    background-color: rgb(22, 39, 190);
+    color: rgb(22, 39, 190);
+    
+   }
+   #Red {
+    width: 10%;
+    border-color: rgb(24, 23, 23) 20px;
+    background-color: rgb(245, 47, 12);
+    color:  rgb(245, 47, 12);
+   }
+   #Green {
+    width: 10%;
+    border-color: rgb(24, 23, 23) 20px;
+    background-color: rgb(19, 241, 30);
+    color: rgb(19, 241, 30);
+   }
+   #Yellow {
+    width: 10%;
+    border-color: rgb(24, 23, 23) 20px;
+    background-color: rgb(221, 201, 19);
+    color: rgb(221, 201, 19);
+   }
+   #Cyan {
+    width: 10%;
+    border-color: rgb(24, 23, 23) 20px;
+    background-color: rgb(42, 159, 236);
+    color: rgb(42, 159, 236);
+   }
+   #Blanco {
+    width: 10%;
+    border-color: rgb(24, 23, 23) 20px;
+    background-color: rgba(248, 249, 252, 0.966);
+    color: rgba(248, 249, 252, 0.966);
+   }
+   #casillanombrecolor {
+    width: 10%;
+    background-color: rgb(117, 206, 179);
+    text-align: center;
+    font-weight: bold;
+   }
+
+   .table{
+    width: 100%;
+    align-content: center;
+    text-align: center;
+
+   }
+
+   
+#pinturitas{
+
+    text-align: left;
+    align-content: left;
+    align-items: left;
+    width: 100%; 
+    height: auto; 
+    font-weight: bold;
+  }
+ 
+ 
+  
+        
+
